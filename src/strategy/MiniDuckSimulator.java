@@ -1,7 +1,7 @@
-package ducks;
+package strategy;
 
-import ducks.ducks.MallardDuck;
-import ducks.ducks.RubberDuck;
+import strategy.ducks.MallardDuck;
+import strategy.ducks.RubberDuck;
 
 public class MiniDuckSimulator {
     public static void main(String[] args)

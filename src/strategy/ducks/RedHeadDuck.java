@@ -1,8 +1,8 @@
-package ducks.ducks;
+package strategy.ducks;
 
-import ducks.Duck;
-import ducks.behaviors.fly.implementations.FlyWithWings;
-import ducks.behaviors.quack.implementations.Quack;
+import strategy.Duck;
+import strategy.behaviors.fly.implementations.FlyWithWings;
+import strategy.behaviors.quack.implementations.Quack;
 
 public class RedHeadDuck extends Duck {
 
