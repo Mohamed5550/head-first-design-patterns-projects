@@ -1,6 +1,6 @@
 package observer;
 
-import observer.dataObjects.WeatherDataObject;
+import observer.records.WeatherRecord;
 import observer.observers.implementations.CurrentConditionsDisplay;
 import observer.observers.implementations.ForecastDisplay;
 import observer.observers.implementations.HeatIndexDisplay;
@@ -17,10 +17,7 @@ public class WeatherStation {
         ForecastDisplay forecastDisplay = new ForecastDisplay(weatherData);
         HeatIndexDisplay heatIndexDisplay = new HeatIndexDisplay(weatherData);
 
-        WeatherDataObject measurementsObject1 = new WeatherDataObject();
-        measurementsObject1.temperature = 80;
-        measurementsObject1.humidity = 65;
-        measurementsObject1.pressure = 30.4f;
+        WeatherRecord measurementsObject1 = new WeatherRecord(80, 65, 30.4f);
 
         weatherData.setMeasurements(measurementsObject1);
     }

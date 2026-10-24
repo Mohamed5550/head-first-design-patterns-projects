@@ -1,7 +1,7 @@
 package observer.observers.implementations;
 
 import observer.contracts.DisplayElement;
-import observer.dataObjects.WeatherDataObject;
+import observer.records.WeatherRecord;
 import observer.observers.Observer;
 import observer.subjects.implementations.WeatherData;
 
@@ -16,10 +16,10 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
         weatherData.registerObserver(this);
     }
 
-    public void update(WeatherDataObject weatherDataobject)
+    public void update(WeatherRecord weatherDataobject)
     {
-        this.temperature = weatherDataobject.temperature;
-        this.humidity = weatherDataobject.humidity;
+        this.temperature = weatherDataobject.temperature();
+        this.humidity = weatherDataobject.humidity();
 
         display();
     }

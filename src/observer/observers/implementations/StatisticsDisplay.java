@@ -1,7 +1,7 @@
 package observer.observers.implementations;
 
 import observer.contracts.DisplayElement;
-import observer.dataObjects.WeatherDataObject;
+import observer.records.WeatherRecord;
 import observer.observers.Observer;
 import observer.subjects.implementations.WeatherData;
 
@@ -17,16 +17,16 @@ public class StatisticsDisplay implements Observer, DisplayElement {
         weatherData.registerObserver(this);
     }
 
-    public void update(WeatherDataObject weatherDataObject) {
-        tempSum += weatherDataObject.temperature;
+    public void update(WeatherRecord weatherRecord) {
+        tempSum += weatherRecord.temperature();
         numReadings++;
 
-        if (weatherDataObject.temperature > maxTemp) {
-            maxTemp = weatherDataObject.temperature;
+        if (weatherRecord.temperature() > maxTemp) {
+            maxTemp = weatherRecord.temperature();
         }
 
-        if (weatherDataObject.temperature < minTemp) {
-            minTemp = weatherDataObject.temperature;
+        if (weatherRecord.temperature() < minTemp) {
+            minTemp = weatherRecord.temperature();
         }
 
         display();

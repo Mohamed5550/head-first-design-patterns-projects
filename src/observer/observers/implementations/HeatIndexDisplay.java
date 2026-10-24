@@ -1,7 +1,7 @@
 package observer.observers.implementations;
 
 import observer.contracts.DisplayElement;
-import observer.dataObjects.WeatherDataObject;
+import observer.records.WeatherRecord;
 import observer.observers.Observer;
 import observer.subjects.implementations.WeatherData;
 
@@ -14,8 +14,8 @@ public class HeatIndexDisplay implements Observer, DisplayElement {
         weatherData.registerObserver(this);
     }
 
-    public void update(WeatherDataObject weatherDataObject) {
-        heatIndex = computeHeatIndex(weatherDataObject.temperature, weatherDataObject.humidity);
+    public void update(WeatherRecord weatherRecord) {
+        heatIndex = computeHeatIndex(weatherRecord.temperature(), weatherRecord.humidity());
         display();
     }
 

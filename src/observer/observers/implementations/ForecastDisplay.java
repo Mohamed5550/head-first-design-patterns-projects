@@ -1,7 +1,7 @@
 package observer.observers.implementations;
 
 import observer.contracts.DisplayElement;
-import observer.dataObjects.WeatherDataObject;
+import observer.records.WeatherRecord;
 import observer.observers.Observer;
 import observer.subjects.implementations.WeatherData;
 
@@ -15,9 +15,9 @@ public class ForecastDisplay implements Observer, DisplayElement {
         weatherData.registerObserver(this);
     }
 
-    public void update(WeatherDataObject weatherDataObject) {
+    public void update(WeatherRecord weatherRecord) {
         lastPressure = currentPressure;
-        currentPressure = weatherDataObject.pressure;
+        currentPressure = weatherRecord.pressure();
 
         display();
     }

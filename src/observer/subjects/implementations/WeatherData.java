@@ -1,6 +1,6 @@
 package observer.subjects.implementations;
 
-import observer.dataObjects.WeatherDataObject;
+import observer.records.WeatherRecord;
 import observer.observers.Observer;
 import observer.subjects.Subject;
 
@@ -9,7 +9,7 @@ import java.util.List;
 
 public class WeatherData implements Subject {
     private List<Observer> observers;
-    private WeatherDataObject weatherData;
+    private WeatherRecord weatherData;
 
     public WeatherData()
     {
@@ -38,7 +38,7 @@ public class WeatherData implements Subject {
         notifyObservers();
     }
 
-    public void setMeasurements(WeatherDataObject data)
+    public void setMeasurements(WeatherRecord data)
     {
         this.weatherData = data;
 
